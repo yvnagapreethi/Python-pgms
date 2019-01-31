@@ -22,7 +22,7 @@ class LinkedList:
         new_node.next = self.head
         self.head = new_node
 
-    def insertAfter(self, prev_node_data, new_data):
+    def insert_after(self, prev_node_data, new_data):
 
         temp_node = self.head
         while temp_node.next:
@@ -52,7 +52,7 @@ class LinkedList:
 
     def delete_using_key(self, key):
         if self.head.data == key:
-            self.delete_head()
+            self.delete_first_element()
 
         else:
             temp_node = self.head
@@ -67,7 +67,7 @@ class LinkedList:
             else:
                 print("Element not found in the list.")
 
-    def delete_head(self):
+    def delete_first_element(self):
         self.head = self.head.next
         print("Deleted the head element")
 
@@ -94,9 +94,9 @@ if __name__ == "__main__":
         elif digit == 3:
             prv_data = int(input("Enter the already existing element value so that new ele will be placed after this"))
             new_data = int(input("Enter the new data value to add into the list"))
-            llist.insertAfter(prv_data, new_data)
+            llist.insert_after(prv_data, new_data)
         elif digit == 4:
-            llist.delete_head()
+            llist.delete_first_element()
         elif digit == 5:
             element = int(input("Enter the element you want to delete from the list: "))
             llist.delete_using_key(element)
