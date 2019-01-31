@@ -23,7 +23,7 @@ class LinkedList:
         self.head = new_node
 
     def insertAfter(self, prev_node_data, new_data):
-        
+
         temp_node = self.head
         while temp_node.next:
             if temp_node.data == prev_node_data:
@@ -53,7 +53,7 @@ class LinkedList:
     def delete_using_key(self, key):
         if self.head.data == key:
             self.delete_head()
-            
+
         else:
             temp_node = self.head
             while temp_node.next:
@@ -80,7 +80,7 @@ class LinkedList:
                 break
 
             temp_node = temp_node.next
-        
+
 
 if __name__ == "__main__":
     llist = LinkedList()
@@ -106,4 +106,3 @@ if __name__ == "__main__":
             llist.print_list_values()
         else:
             break
-   
