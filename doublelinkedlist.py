@@ -108,10 +108,23 @@ class DoubleLinkedList:
             print(temp.data)
             temp = temp.next
 
+    def reverse_all_elements(self):
+        temp = self.head
+        while temp:
+            curr_prev = temp.prev
+            temp.prev = temp.next
+            temp.next = curr_prev
+            if temp.prev is None:
+                break
+            else:
+                self.head = temp.prev
+                temp = temp.prev
+        print("temp value is {}".format(self.head.data))
+
 if __name__ == "__main__":
     dll = DoubleLinkedList()
     while True:
-        print("Select any number from below:\n1.Create a Head node\n2.Appending a node at the end of list\n3.Insert an element at specific location\n4.Delete Head Element\n5.Delete an element by providing key value\n6.Deleting the last elemetn present in the list\n7.Display the elements present in the list")
+        print("Select any number from below:\n1.Create a Head node\n2.Appending a node at the end of list\n3.Insert an element at specific location\n4.Delete Head Element\n5.Delete an element by providing key value\n6.Deleting the last elemetn present in the list\n7.Display the elements present in the list\n8.Display the elements in the reverse order")
         digit = int(input("Press the number: "))
         if digit == 1:
             dll.create_root_element(int(input("Enter the data to make it as a head element in the list")))
@@ -130,5 +143,7 @@ if __name__ == "__main__":
             dll.delete_last_element()
         elif digit == 7:
             dll.print_all_elements()
+        elif digit == 8:
+            dll.reverse_all_elements()
         else:
             break
