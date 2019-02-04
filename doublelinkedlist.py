@@ -1,4 +1,3 @@
-"""Class code goes from here"""
 class Node:
     def __init__(self, data):
         self.prev = None
@@ -10,7 +9,7 @@ class DoubleLinkedList:
     def __init__(self):
         self.head = None
 
-    def create_root_element(self,value):
+    def create_root_element(self, value):
         if self.head is None:
             self.head = Node(value)
         else:
@@ -19,7 +18,7 @@ class DoubleLinkedList:
             self.head.prev = new_node
             self.head = new_node
 
-    def create_last_element(self,value):
+    def create_last_element(self, value):
         if self.head is None:
             self.create_root_element(value)
         else:
@@ -51,7 +50,7 @@ class DoubleLinkedList:
                 temp = temp.next
             else:
                 print("The entered element is not in the list.")
-                
+
     def delete_first_element(self):
         if self.head is None:
             print("There are no elements present in the list to delete")
@@ -61,7 +60,7 @@ class DoubleLinkedList:
             self.head.next = None
             temporary.prev = None
             self.head = temporary
-    
+
     def delete_last_element(self):
         if self.head is None:
             print("There are no elements present in the list to delete")
@@ -76,18 +75,16 @@ class DoubleLinkedList:
                     temp.next = None
                     break
                 temp = temp.next
-    
-    def delete_middle_element(self,del_val):
+
+    def delete_middle_element(self, del_val):
         if self.head is None:
             print("There are no elements present in the list to delete")
         elif self.head.data == del_val:
             self.delete_first_element()
         else:
-            
             temp = self.head
             while temp:
                 if temp.data == del_val:
-                    
                     if temp.next is None:
                         self.delete_last_element()
                         break
@@ -99,7 +96,6 @@ class DoubleLinkedList:
                 temp = temp.next
             else:
                 print("No such elements present in the list")
-                    
 
     def print_all_elements(self):
         temp = self.head
@@ -120,6 +116,7 @@ class DoubleLinkedList:
                 self.head = temp.prev
                 temp = temp.prev
         print("temp value is {}".format(self.head.data))
+
 
 if __name__ == "__main__":
     dll = DoubleLinkedList()

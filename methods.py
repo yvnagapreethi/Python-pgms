@@ -15,9 +15,10 @@ class MethodsOfPython:
         print("calling instance method")
 
 
-MethodsOfPython.static_method()
-mp = MethodsOfPython()
-mp.static_method()
-mp.class_method()
-# MethodsOfPython.inst_methond()
-mp.inst_methond()
+if __name__ == "__main__":
+    MethodsOfPython.static_method()
+    mp = MethodsOfPython()
+    mp.static_method()
+    mp.class_method()
+    # MethodsOfPython.inst_methond()
+    mp.inst_methond()
